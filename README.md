@@ -33,4 +33,39 @@ Baza pacjentów to 65 plików CSV, zawierających średnio 13 tys. rekordów. Pr
 * Wejście – wymagana ilość kolumn po nazwie leku, ścieżka do folderu z plikami do modyfikacji, folder końcowy do zapisywania plików przekształconych;
 * Wyjście – pliki CSV po przekształceniu.
 
+### 4) Generator kodów pocztowych
+<b>Program do generowania kodów pocztowych pomiędzy dwoma podanymi</b><br>
+plik – <i>04_generator_kodów_pocztowych.py</i>
 
+Generator kodów pocztowych został napisany jako próba wykonania zadania testowego w celu aplikowania na stanowisko Juniora. Skrypt przyjmuje dwa stringi, na przykład '79-900' i '80-155'. Dalej zwraca listę kodów pomiędzy nimi.
+*	Wejście – 2 stringi (kody pocztowe);
+*	Wyjście – lista kodów pomiędzy dwoma podanymi.
+
+### 5) Lista brakujących elementów
+<b>Skrypt otrzymuje elementy z listy 1-n, szuka brakujących i je wypisuje</b><br>
+plik – <i>05_lista_brakujących_elementów.py</i>
+
+Program Lista brakujących elementów został napisany jako próba wykonania zadania testowego w celu aplikowania na stanowisko Juniora. Podana jest lista, zawierająca elementy o wartościach 1-n. Program sprawdza jakich elementów brakuje: 1-n = [1,2,3,4,5,...,10], na przykład:<br>
+a) n=10;<br>
+b) wejście: [2,3,7,4,9], 10;<br>
+c) wyjście: [1,5,6,8,10].<br>
+*	Wejście – liczba n, lista istniejących elementów;
+*	Wyjście – lista brakujących elementów.
+
+### 6) Dataset
+<b>Program do generowania kodów pocztowych pomiędzy dwoma podanymi</b><br>
+pliki – <i>06_dataset.py</i> (skrypt), <i>06_bank.csv</i> (dane źródłowe)
+
+Moduł wykonano w ramach projektu zaliczeniowego na studiach podyplomowych. Dostarcza szereg funkcjonalności w pracy z datasetem:
+*	wczytanie datasetu (funkcja, która po podaniu ścieżki wczytuje dane z pliku do listy. Dodatkowo funkcja przyjmuje parametr, określający czy pierwszy wiersz pliku zawiera etykiety kolumn czy nie. Jeżeli tak, to etykiety wczytywane są do oddzielnej listy);
+*	wypisanie etykiet (funkcja wypisująca etykiety lub komunikat, że etykiet nie było w danym datasecie);
+*	wypisanie danych datasetu (funkcja wypisuje kolejne wiersze datasetu. Bez podania parametrów wypisywany jest cały dataset, ale możliwe też podanie 2 parametrów, które określają przedział, który ma zostać wyświetlony);
+*	podział datasetu na zbiór treningowy, testowy i walidacyjny (funkcja przyjmuje 3 parametry określające procentowo jaka część głównego zbioru danych trafia do poszczególnych zbiorów);
+*	wypis liczby klas decyzyjnych;
+*	wypisz dane dla podanej wartości klasy decyzyjnej (wypisuje wiersze z zadaną wartością klasy decyzyjnej);
+*	zapisanie danych do pliku csv (jako parametr przyjmowana jest dowolna lista, która może być podzbiorem datasetu, zmienną przechowującą dane treningowe, itp. Dodatkowo podawana jest nazwa pliku, do którego dane zostaną zapisane).
+
+Funkcjonalność zrealizowano dla pliku bank.csv (https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip).
+
+*	Wejście – ścieżka do pliku źródłowego CSV;
+*	Wyjście – zgodnie z funkcjonalnością i wybranymi odpowiedziami w trakcie wykonania programu.
