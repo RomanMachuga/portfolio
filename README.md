@@ -1,5 +1,5 @@
 # portfolio
-</b>My portfolio of private Python projects</b>
+<b>My portfolio of private Python projects</b>
 
 Zawira kilka prywatnych projektów, które zostały zrealizowane jako:
   a) rozwiązanie zadań praktycznych, z którymi miałem doczynienie;
