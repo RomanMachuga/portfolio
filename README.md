@@ -1,8 +1,8 @@
 # Portfolio
 <i><b>Moje portfolio zawierające kilka prywatnych projektów, zrealizowanych w Python</b></i>
 
-Zawiera kilka prywatnych projektów, które zostały zrealizowane jako:
-* rozwiązanie zadań praktycznych, z którymi miałem doczynienie;
+Zawiera kilka prywatnych projektów, które zostały zrealizowane jako: 
+* rozwiązanie zadań praktycznych, z którymi miałem do czynienie;
 * próba napisania programów wymaganych do aplikowania na stanowisko juniora;
 * projekt zaliczeniowy z przedmiotu na studiach podyplomowych "Data Science w praktyce".
 
@@ -19,7 +19,7 @@ Przykładowy adres URL: https://api.cepik.gov.pl/pojazdy?wojewodztwo=14&data-od=
 <b>Program do pobierania historycznych kursów walut z API NBP</b><br>
 plik – <i>02_pobieranie_z_API_NBP.py</i>
 
-Program pobiera dane historyczne kursów walut (tabela A) z API NBP (Narodowy Bank Poski) - http://api.nbp.pl/. W jednym pobraniu można sciągnąć dane z okresu, który nie przekracza 93 dni (ograniczenie NBP)
+Program pobiera dane historyczne kursów walut (tabela A) z API NBP (Narodowy Bank Polski) - http://api.nbp.pl/. W jednym pobraniu można ściągnąć dane z okresu, który nie przekracza 93 dni (ograniczenie NBP)
 Skrypt pyta o datę początkową oraz końcową. Wynik jest zapisywany w pliku CSV.<br>
 Przykładowy adres URL: https://api.nbp.pl/api/exchangerates/tables/a/2012-01-01/2012-01-31/?format=json
 *	Wejście – data początkowa, data końcowa;
