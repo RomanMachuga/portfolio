@@ -53,7 +53,7 @@ c) wyjście: [1,5,6,8,10].<br>
 *	Wyjście – lista brakujących elementów.
 
 ### 6) Dataset
-<b>Program do generowania kodów pocztowych pomiędzy dwoma podanymi</b><br>
+<b>Program do przekształcenia datasetu</b><br>
 pliki – <i>06_dataset.py</i> (skrypt), <i>06_bank.csv</i> (dane źródłowe)
 
 Moduł wykonano w ramach projektu zaliczeniowego na studiach podyplomowych. Dostarcza szereg funkcjonalności w pracy z datasetem:
