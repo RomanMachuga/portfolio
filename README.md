@@ -1,7 +1,7 @@
 # Portfolio
 <i><b>Moje portfolio zawierające kilka prywatnych projektów, zrealizowanych w Python</b></i>
 
-Zawiera kilka prywatnych projektów, które zostały zrealizowane jako: 
+Poniższe projekty zostały zrealizowane jako: 
 * rozwiązanie zadań praktycznych, z którymi miałem do czynienie;
 * próba napisania programów wymaganych do aplikowania na stanowisko juniora;
 * projekt zaliczeniowy z przedmiotu na studiach podyplomowych "Data Science w praktyce".
