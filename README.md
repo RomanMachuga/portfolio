@@ -6,8 +6,7 @@ Poniższe projekty zostały zrealizowane jako:
 * próba napisania programów wymaganych do aplikowania na stanowisko juniora;
 * projekt zaliczeniowy z przedmiotu na studiach podyplomowych "Data Science w praktyce".
 
-### 1) API CEPiK
-# API CEPiK – Automatyczne Pobieranie Danych do CSV
+### 1) API CEPiK – Automatyczne Pobieranie Danych do CSV
 
 **📌 Program do pobierania danych z API CEPiK dla wybranego roku i zapisywania ich w plikach CSV (dla wszystkich województw).**  
 
@@ -84,57 +83,112 @@ Każdy plik zawiera dane w formacie **CSV**.
 
 🔹 **Chcesz zobaczyć kod? Pobierz repozytorium i przetestuj!** 🚀
 
-### 2) API NBP
-<b>Program do pobierania historycznych kursów walut z API NBP</b><br>
-plik – <i>02_pobieranie_z_API_NBP.py</i>
+### 2) 📌 API NBP – Pobieranie historycznych kursów walut
 
-Program pobiera dane historyczne kursów walut (tabela A) z API NBP (Narodowy Bank Polski) - http://api.nbp.pl/. W jednym pobraniu można ściągnąć dane z okresu, który nie przekracza 93 dni (ograniczenie NBP)
-Skrypt pyta o datę początkową oraz końcową. Wynik jest zapisywany w pliku CSV.<br>
-Przykładowy adres URL: https://api.nbp.pl/api/exchangerates/tables/a/2012-01-01/2012-01-31/?format=json
-*	Wejście – data początkowa, data końcowa;
-*	Wyjście – jeden plik CSV.
+**📂 Plik:** `02_pobieranie_z_API_NBP.py`
 
-### 3) Dostosowanie CSV
-<b>Skrypt do przekształcania bazy pacjentów przychodni przez wyrównanie ilości kolumn po nazwie każdego leku (przy zastosowaniu Pandas)</b><br>
-plik – <i>03_przeksztalcanie_plikow_csv.py</i>
+Ten program automatyzuje pobieranie historycznych kursów walut (tabela A) z **Narodowego Banku Polskiego (NBP)**. Dane są pobierane dla wybranego zakresu dat i zapisywane w pliku CSV.
 
-Baza pacjentów to 65 plików CSV, zawierających średnio 13 tys. rekordów. Program po kolei pobiera pliki CSV z folderu, przekształca je, zmieniając nazwy kolumn i dodając brakujące. Zmodyfikowany dataset z powrotem zapisywany jest do pliku CSV.
-* Wejście – wymagana ilość kolumn po nazwie leku, ścieżka do folderu z plikami do modyfikacji, folder końcowy do zapisywania plików przekształconych;
-* Wyjście – pliki CSV po przekształceniu.
+🔹 **Źródło danych:** [API NBP](http://api.nbp.pl/)  
+🔹 **Zakres pobierania:** maks. 93 dni na jedno zapytanie  
+🔹 **Format danych:** CSV  
 
-### 4) Generator kodów pocztowych
-<b>Program do generowania kodów pocztowych pomiędzy dwoma podanymi</b><br>
-plik – <i>04_generator_kodów_pocztowych.py</i>
+## 🔧 Funkcjonalność
+✔ **Pobieranie kursów walut dla wybranego przedziału czasowego**  
+✔ **Obsługa ograniczeń API (93 dni na jedno zapytanie)**  
+✔ **Zapis danych do pliku CSV**  
 
-Generator kodów pocztowych został napisany jako próba wykonania zadania testowego w celu aplikowania na stanowisko Juniora. Skrypt przyjmuje dwa stringi, na przykład '79-900' i '80-155'. Dalej zwraca listę kodów pomiędzy nimi.
-*	Wejście – 2 stringi (kody pocztowe);
-*	Wyjście – lista kodów pomiędzy dwoma podanymi.
+## 🚀 Jak uruchomić?
+1. **Uruchom skrypt**  
+   ```sh
+   python 02_pobieranie_z_API_NBP.py
+   ```
+2. **Podaj zakres dat** (początkową i końcową).  
 
-### 5) Lista brakujących elementów
-<b>Skrypt otrzymuje elementy z listy 1-n, szuka brakujących i je wypisuje</b><br>
-plik – <i>05_lista_brakujących_elementów.py</i>
+---
 
-Program Lista brakujących elementów został napisany jako próba wykonania zadania testowego w celu aplikowania na stanowisko Juniora. Podana jest lista, zawierająca elementy o wartościach 1-n. Program sprawdza jakich elementów brakuje: 1-n = [1,2,3,4,5,...,10], na przykład:<br>
-a) n=10;<br>
-b) wejście: [2,3,7,4,9], 10;<br>
-c) wyjście: [1,5,6,8,10].<br>
-*	Wejście – liczba n, lista istniejących elementów;
-*	Wyjście – lista brakujących elementów.
+### 3) 📌 Dostosowanie CSV – Przekształcanie bazy pacjentów
 
-### 6) Dataset
-<b>Program do przekształcenia datasetu</b><br>
-pliki – <i>06_dataset.py</i> (skrypt), <i>06_bank.csv</i> (dane źródłowe)
+**📂 Plik:** `03_przeksztalcanie_plikow_csv.py`
 
-Moduł wykonano w ramach projektu zaliczeniowego na studiach podyplomowych. Dostarcza szereg funkcjonalności w pracy z datasetem:
-*	wczytywanie datasetu (funkcja, która po podaniu ścieżki wczytuje dane z pliku do listy. Dodatkowo funkcja przyjmuje parametr, określający czy pierwszy wiersz pliku zawiera etykiety kolumn czy nie. Jeżeli tak, to etykiety wczytywane są do oddzielnej listy);
-*	wypisywanie etykiet (funkcja wypisująca etykiety lub komunikat, że etykiet nie było w danym datasecie);
-*	wypisywanie danych datasetu (funkcja wypisuje kolejne wiersze datasetu. Bez podania parametrów wypisywany jest cały dataset, ale możliwe też podanie 2 parametrów, które określają przedział, który ma zostać wyświetlony);
-*	podział datasetu na zbiór treningowy, testowy i walidacyjny (funkcja przyjmuje 3 parametry określające procentowo jaka część głównego zbioru danych trafia do poszczególnych zbiorów);
-*	wypis liczby klas decyzyjnych;
-*	wypisywanie danych dla podanej wartości klasy decyzyjnej (wypisuje wiersze z zadaną wartością klasy decyzyjnej);
-*	zapisywanie danych do pliku csv (jako parametr przyjmowana jest dowolna lista, która może być podzbiorem datasetu, zmienną przechowującą dane treningowe, itp. Dodatkowo podawana jest nazwa pliku, do którego dane zostaną zapisane).
+Program służy do normalizacji struktury danych w **bazie pacjentów**, w której każda kolumna reprezentuje lek.  
+Baza składa się z **65 plików CSV**, zawierających średnio **13 tys. rekordów** każdy.
 
-Funkcjonalność zrealizowano dla pliku bank.csv (https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip).
+## 🔧 Funkcjonalność
+✔ **Wczytywanie i przekształcanie plików CSV**  
+✔ **Dodawanie brakujących kolumn według nazw leków**  
+✔ **Zapis danych w nowej strukturze do plików CSV**  
 
-*	Wejście – ścieżka do pliku źródłowego CSV;
-*	Wyjście – zgodnie z funkcjonalnością i wybranymi odpowiedziami w trakcie wykonania programu.
+## 🚀 Jak uruchomić?
+1. **Uruchom skrypt**  
+   ```sh
+   python 03_przeksztalcanie_plikow_csv.py
+   ```
+2. **Podaj katalog wejściowy i wyjściowy**  
+
+---
+
+### 4) 📌 Generator kodów pocztowych
+
+**📂 Plik:** `04_generator_kodów_pocztowych.py`
+
+Skrypt generuje listę kodów pocztowych w zakresie podanym przez użytkownika.  
+Przykładowo, dla **'79-900' – '80-155'**, program zwróci wszystkie kody pomiędzy nimi.
+
+## 🔧 Funkcjonalność
+✔ **Generowanie zakresu kodów pocztowych**  
+✔ **Obsługa kodów w formacie `XX-XXX`**  
+✔ **Zapis wyników do listy**  
+
+## 🚀 Jak uruchomić?
+1. **Uruchom skrypt**  
+   ```sh
+   python 04_generator_kodów_pocztowych.py
+   ```
+2. **Podaj dwa kody pocztowe** (początkowy i końcowy).  
+
+---
+
+### 5) 📌 Lista brakujących elementów
+
+**📂 Plik:** `05_lista_brakujących_elementów.py`
+
+Program identyfikuje brakujące wartości w ciągu liczb od `1` do `n`.  
+Dla przykładu, jeśli `n=10` i podana lista to `[2,3,7,4,9]`, wynik to `[1,5,6,8,10]`.
+
+## 🔧 Funkcjonalność
+✔ **Analiza listy i znajdowanie brakujących wartości**  
+✔ **Obsługa dowolnych zakresów**  
+✔ **Zapis wyników do listy**  
+
+## 🚀 Jak uruchomić?
+1. **Uruchom skrypt**  
+   ```sh
+   python 05_lista_brakujących_elementów.py
+   ```
+2. **Podaj `n` oraz listę wartości**  
+
+---
+
+### 6) 📌 Dataset – Przekształcanie zbiorów danych
+
+**📂 Pliki:** `06_dataset.py` (skrypt), `06_bank.csv` (dane źródłowe)
+
+Moduł realizuje szereg operacji na zbiorach danych, takich jak podział na zestawy treningowe, analiza klas decyzyjnych i zapis wyników.
+
+## 🔧 Funkcjonalność
+✔ **Wczytywanie datasetu i analiza etykiet kolumn**  
+✔ **Podział danych na zbiór treningowy, testowy i walidacyjny**  
+✔ **Filtrowanie danych według wartości klasy decyzyjnej**  
+✔ **Zapis przekształconego datasetu do CSV**  
+
+## 🚀 Jak uruchomić?
+1. **Uruchom skrypt**  
+   ```sh
+   python 06_dataset.py
+   ```
+2. **Podaj ścieżkę do pliku CSV**  
+
+---
+
+🔹 **Chcesz zobaczyć kod? Pobierz repozytorium i przetestuj!** 🚀
