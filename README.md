@@ -7,13 +7,44 @@ Poniższe projekty zostały zrealizowane jako:
 * projekt zaliczeniowy z przedmiotu na studiach podyplomowych "Data Science w praktyce".
 
 ### 1) API CEPiK
-<b>Program do pobierania danych dla wybranego roku z API CEPiK i zapisywania do plików CSV (dla wszystkich województw)</b><br>
-plik – <i>01_API_CEPiK.py</i>
+📌 Pobieranie danych z API CEPiK
+Ten program pobiera dane z API CEPiK (Centralna Ewidencja Pojazdów i Kierowców) dla wszystkich województw w podanym roku. Wyniki są zapisywane w plikach CSV, z podziałem na województwa i miesiące.
+________________________________________
+🔧 Funkcjonalność
+✔ Automatyczne pobieranie danych – program pobiera informacje o pojazdach dla wszystkich województw.
+✔ Obsługa wielu stron wyników – jeśli liczba rekordów przekracza limit API, program iteruje po kolejnych stronach.
+✔ Zapis do plików CSV – dane są zapisywane w katalogach odpowiadających kodom województw, np. w14.
+✔ Obsługa błędów i ponawianie zapytań – jeśli API zwraca błąd lub zbyt mało wyników, program ponawia pobieranie.
+✔ Niestandardowa obsługa SSL – dzięki specjalnemu adapterowi SSLAdapter, program radzi sobie z problemami związanymi z certyfikatami.
+________________________________________
+🛠 Jak uruchomić?
+1.	Zainstaluj wymagane biblioteki
+pip install requests urllib3
+2.	Uruchom skrypt
+python 04_API_CEPiK.py
+3.	Podaj rok – program pobierze dane dla każdego miesiąca.
+________________________________________
+📂 Struktura wyników
+Pliki są zapisywane w katalogach według województw i miesięcy:
+scss
+KopiujEdytuj
+📂 2023
+ ├── 📂 w02  (Dolnośląskie)
+ │    ├── w02_r2023_m01.csv
+ │    ├── w02_r2023_m02.csv
+ │    ├── ...
+ ├── 📂 w14  (Mazowieckie)
+ │    ├── w14_r2023_m01.csv
+ │    ├── w14_r2023_m02.csv
+ │    ├── ...
+Każdy plik zawiera dane w formacie CSV.
+________________________________________
+📌 Dlaczego warto?
+✅ Automatyzacja pobierania danych z API CEPiK
+✅ Obsługa błędów i ponowne próby pobrania
+✅ Struktura danych ułatwiająca analizę w Excelu, Pandas itp.
+✅ Radzenie sobie z problemami SSL w API CEPiK
 
-Program pobiera dane z API CEPiK (Centralna Ewidencja Pojazdów i Kierowców - http://www.cepik.gov.pl/interfejs-dla-cepik) dla wszystkich województw dla podanego roku (każdy miesiąc jako osobny plik). Wynik jest zapisywany w plikach CSV w katalogu z kodem województwa, na przykład "w14".<br>
-Przykładowy adres URL: https://api.cepik.gov.pl/pojazdy?wojewodztwo=14&data-od=20100101&data-do=20101231&typ-daty=2&tylko-zarejestrowane=true&pokaz-wszystkie-pola=true&limit=500<br>
-*	Wejście – rok;
-*	Wyjście – dwanaście plików CSV.
 
 ### 2) API NBP
 <b>Program do pobierania historycznych kursów walut z API NBP</b><br>
