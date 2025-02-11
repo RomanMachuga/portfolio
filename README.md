@@ -6,13 +6,13 @@ Poniższe projekty zostały zrealizowane jako:
 * próba napisania programów wymaganych do aplikowania na stanowisko juniora;
 * projekt zaliczeniowy z przedmiotu na studiach podyplomowych "Data Science w praktyce".
 
+---
+
 ### 1) API CEPiK – Automatyczne Pobieranie Danych do CSV
 
 **📌 Program do pobierania danych z API CEPiK dla wybranego roku i zapisywania ich w plikach CSV (dla wszystkich województw).**  
 
----
-
-## 📌 Opis  
+# 📌 Opis  
 Ten program automatyzuje pobieranie danych o pojazdach z **Centralnej Ewidencji Pojazdów i Kierowców (CEPiK)**.  
 Dane są zapisywane w osobnych plikach **CSV** dla każdego województwa i miesiąca, co ułatwia ich analizę.
 
@@ -20,9 +20,7 @@ Dane są zapisywane w osobnych plikach **CSV** dla każdego województwa i miesi
 🔹 **Źródło danych:** [API CEPiK](http://www.cepik.gov.pl/interfejs-dla-cepik)  
 🔹 **Format danych:** CSV  
 
----
-
-## 🔧 Funkcjonalność  
+# 🔧 Funkcjonalność  
 
 ✔ **Automatyczne pobieranie danych** – program pobiera informacje o pojazdach dla wszystkich województw w wybranym roku.  
 ✔ **Obsługa paginacji API** – jeżeli liczba rekordów przekracza limit API, program automatycznie pobiera kolejne strony.  
@@ -30,9 +28,7 @@ Dane są zapisywane w osobnych plikach **CSV** dla każdego województwa i miesi
 ✔ **Obsługa błędów i ponawianie zapytań** – jeśli API zwróci zbyt mało wyników lub wystąpi błąd, program ponawia pobieranie.  
 ✔ **Niestandardowa obsługa SSL** – dzięki specjalnej konfiguracji, program radzi sobie z problemami związanymi z certyfikatami.  
 
----
-
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 
 1. **Zainstaluj wymagane biblioteki**  
    ```sh
@@ -46,9 +42,7 @@ Dane są zapisywane w osobnych plikach **CSV** dla każdego województwa i miesi
 
 3. **Podaj rok** – program pobierze dane dla każdego miesiąca i zapisze je w plikach CSV.
 
----
-
-## 📂 Struktura wyników  
+# 📂 Struktura wyników  
 
 Dane są zapisywane w katalogach według województw i miesięcy:
 
@@ -65,23 +59,19 @@ Dane są zapisywane w katalogach według województw i miesięcy:
 ```
 Każdy plik zawiera dane w formacie **CSV**.
 
----
-
-## 📌 Dlaczego warto?
+# 📌 Dlaczego warto?
 
 ✅ **Automatyzacja pobierania danych z API CEPiK**  
 ✅ **Obsługa błędów i ponowne próby pobrania**  
 ✅ **Struktura danych ułatwiająca analizę w Excelu, Pandas itp.**  
 ✅ **Radzenie sobie z problemami SSL w API CEPiK**  
 
----
-
-### 🔗 **Plany na przyszłość**
+# 🔗 **Plany na przyszłość**
 - 📊 Możliwość eksportu danych do bazy SQL  
 - 📈 Wizualizacja danych w Power BI  
 - 📉 Filtrowanie rekordów według parametrów  
 
-🔹 **Chcesz zobaczyć kod? Pobierz repozytorium i przetestuj!** 🚀
+---
 
 ### 2) 📌 API NBP – Pobieranie historycznych kursów walut
 
@@ -93,12 +83,12 @@ Ten program automatyzuje pobieranie historycznych kursów walut (tabela A) z **N
 🔹 **Zakres pobierania:** maks. 93 dni na jedno zapytanie  
 🔹 **Format danych:** CSV  
 
-## 🔧 Funkcjonalność
+# 🔧 Funkcjonalność
 ✔ **Pobieranie kursów walut dla wybranego przedziału czasowego**  
 ✔ **Obsługa ograniczeń API (93 dni na jedno zapytanie)**  
 ✔ **Zapis danych do pliku CSV**  
 
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 1. **Uruchom skrypt**  
    ```sh
    python 02_pobieranie_z_API_NBP.py
@@ -114,12 +104,12 @@ Ten program automatyzuje pobieranie historycznych kursów walut (tabela A) z **N
 Program służy do normalizacji struktury danych w **bazie pacjentów**, w której każda kolumna reprezentuje lek.  
 Baza składa się z **65 plików CSV**, zawierających średnio **13 tys. rekordów** każdy.
 
-## 🔧 Funkcjonalność
+# 🔧 Funkcjonalność
 ✔ **Wczytywanie i przekształcanie plików CSV**  
 ✔ **Dodawanie brakujących kolumn według nazw leków**  
 ✔ **Zapis danych w nowej strukturze do plików CSV**  
 
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 1. **Uruchom skrypt**  
    ```sh
    python 03_przeksztalcanie_plikow_csv.py
@@ -135,12 +125,12 @@ Baza składa się z **65 plików CSV**, zawierających średnio **13 tys. rekord
 Skrypt generuje listę kodów pocztowych w zakresie podanym przez użytkownika.  
 Przykładowo, dla **'79-900' – '80-155'**, program zwróci wszystkie kody pomiędzy nimi.
 
-## 🔧 Funkcjonalność
+# 🔧 Funkcjonalność
 ✔ **Generowanie zakresu kodów pocztowych**  
 ✔ **Obsługa kodów w formacie `XX-XXX`**  
 ✔ **Zapis wyników do listy**  
 
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 1. **Uruchom skrypt**  
    ```sh
    python 04_generator_kodów_pocztowych.py
@@ -156,12 +146,12 @@ Przykładowo, dla **'79-900' – '80-155'**, program zwróci wszystkie kody pomi
 Program identyfikuje brakujące wartości w ciągu liczb od `1` do `n`.  
 Dla przykładu, jeśli `n=10` i podana lista to `[2,3,7,4,9]`, wynik to `[1,5,6,8,10]`.
 
-## 🔧 Funkcjonalność
+# 🔧 Funkcjonalność
 ✔ **Analiza listy i znajdowanie brakujących wartości**  
 ✔ **Obsługa dowolnych zakresów**  
 ✔ **Zapis wyników do listy**  
 
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 1. **Uruchom skrypt**  
    ```sh
    python 05_lista_brakujących_elementów.py
@@ -176,19 +166,15 @@ Dla przykładu, jeśli `n=10` i podana lista to `[2,3,7,4,9]`, wynik to `[1,5,6,
 
 Moduł realizuje szereg operacji na zbiorach danych, takich jak podział na zestawy treningowe, analiza klas decyzyjnych i zapis wyników.
 
-## 🔧 Funkcjonalność
+# 🔧 Funkcjonalność
 ✔ **Wczytywanie datasetu i analiza etykiet kolumn**  
 ✔ **Podział danych na zbiór treningowy, testowy i walidacyjny**  
 ✔ **Filtrowanie danych według wartości klasy decyzyjnej**  
 ✔ **Zapis przekształconego datasetu do CSV**  
 
-## 🚀 Jak uruchomić?
+# 🚀 Jak uruchomić?
 1. **Uruchom skrypt**  
    ```sh
    python 06_dataset.py
    ```
 2. **Podaj ścieżkę do pliku CSV**  
-
----
-
-🔹 **Chcesz zobaczyć kod? Pobierz repozytorium i przetestuj!** 🚀
