@@ -32,7 +32,7 @@ Dane są zapisywane w osobnych plikach **CSV** dla każdego województwa i miesi
 
 1. **Zainstaluj wymagane biblioteki**  
    ```sh
-   pip install requests urllib3
+   pip install requests
    ```
 
 2. **Uruchom skrypt**  
